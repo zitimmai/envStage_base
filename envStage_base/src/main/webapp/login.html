@@ -64,16 +64,16 @@
 					<input name="username" type="text" placeholder="请输入账号" autocomplete="off" >
 
 					<input name="password" type="password" placeholder="请输入密码" autocomplete="off" >
-<!--					<div class="verify">-->
-<!--						<input name="check" type="text" placeholder="请输入验证码" autocomplete="off">-->
-<!--						<span><img src="checkCode" alt="" onclick="changeCheckCode(this)"></span>-->
-<!--						<script type="text/javascript">-->
-<!--							//图片点击事件-->
-<!--							function changeCheckCode(img) {-->
-<!--								img.src="checkCode?"+new Date().getTime();-->
-<!--							}-->
-<!--						</script>-->
-<!--					</div>-->
+					<div class="verify">
+						<input name="check" type="text" placeholder="请输入验证码" autocomplete="off">
+						<span><img src="checkCode" alt="" onclick="changeCheckCode(this)"></span>
+						<script type="text/javascript">
+							//图片点击事件
+							function changeCheckCode(img) {
+								img.src="checkCode?"+new Date().getTime();
+							}
+						</script>
+					</div>
 					<div class="submit_btn">
 						<button type="button"  id="btn_sub">登录</button>
 						<div class="auto_login">
