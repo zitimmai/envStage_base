@@ -10,6 +10,7 @@ public class ResultInfo implements Serializable {
     private boolean flag;//后端返回结果正常为true，发生异常返回false
     private Object data;//后端返回结果数据对象
     private String errorMsg;//发生异常的错误消息
+    private boolean account;//设置身份
 
     //无参构造方法
     public ResultInfo() {
@@ -62,5 +63,13 @@ public class ResultInfo implements Serializable {
 
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
+    }
+
+    public boolean getAccount() {
+        return account;
+    }
+
+    public void setAccount(boolean account) {
+        this.account = account;
     }
 }

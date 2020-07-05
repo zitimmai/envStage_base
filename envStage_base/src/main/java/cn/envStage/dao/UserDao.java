@@ -17,5 +17,5 @@ public interface UserDao {
      */
     public void save(User user);
 
-    User findByUsernameAndPassword(String username, String password);
+    User findByUsernameAndPassword(String username, String password, String identity);
 }

@@ -21,6 +21,8 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //1.获取用户名和密码数据
         Map<String, String[]> map = request.getParameterMap();
+        String id = request.getParameter("identity");
+        System.out.println("前端传来的：" + id);
 
         //2.封装User对象
         User user = new User();
@@ -33,6 +35,7 @@ public class LoginServlet extends HttpServlet {
         }
 
         System.out.println("获取到的用户名：" + user.getUsername());
+        System.out.println("获取到的身份：" + user.getIdentity());
 
         //3.调用Service查询
         UserService service = new UserServiceImpl();
@@ -52,6 +55,12 @@ public class LoginServlet extends HttpServlet {
         //6.判断登录成功
         if(u != null ){
             request.getSession().setAttribute("user", u);
+            System.out.println("身份：" + u.getIdentity());
+            if("user".equals(u.getIdentity())){
+                info.setAccount(true);
+            }else{
+                info.setAccount(false);
+            }
             //登录成功
             info.setFlag(true);
             System.out.println("success");
@@ -59,7 +68,7 @@ public class LoginServlet extends HttpServlet {
 
         //响应数据
         ObjectMapper mapper = new ObjectMapper();
-
+//        System.out.println(info.getAccount());
         response.setContentType("application/json;charset=utf-8");
         mapper.writeValue(response.getOutputStream(),info);
 

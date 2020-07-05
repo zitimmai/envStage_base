@@ -7,7 +7,7 @@
 
 .login-box {
     width: 360px;
-    height: 450px;
+    height: 490px;
     position: absolute;
     top: 50px;
     right:170px;
@@ -48,10 +48,26 @@
     border-bottom: 1px solid #eee;
 }
 .login_inner input {
+     display: inline-block;
+     width: 246px;
+     height: 32px;
+     border: 1px solid #d8d8d8;
+     font-size: 16px;
+     color: #666;
+     line-height: 28px;
+     padding: 6px 0 6px 12px;
+     box-shadow: 0 0 5px #fff;
+     outline: none;
+     transition: box-shadow 0.25s linear 0s;
+     -webkit-transition: box-shadow 0.25s linear 0s;
+     margin-bottom: 17px;
+ }
+
+.login_inner select {
     display: inline-block;
     width: 246px;
-    height: 32px;
-    border: 3px solid #d8d8d8;
+    height: 40px;
+    border: 2px solid #d8d8d8;
     font-size: 16px;
     color: #666;
     line-height: 28px;
@@ -63,14 +79,14 @@
     margin-bottom: 17px;
 }
 .verify input {
-    width: 95px;
+    width: 140px;
     margin-right: 20px;
     float: left;
     margin-bottom: 0;
 }
 
 .submit_btn button {
-    width: 120px;
+    width: 246px;
     height: 40px;
     border: none;
     background-color: #ffa800;   
@@ -81,6 +97,7 @@
     font-weight: bold;
     cursor: pointer;
     float: left;
+    margin-top: 15px;
 }
 .auto_login {
    margin-top: 15px;

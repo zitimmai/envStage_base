@@ -52,13 +52,13 @@ public class UserDaoImpl implements UserDao {
      * @return
      */
     @Override
-    public User findByUsernameAndPassword(String username, String password) {
+    public User findByUsernameAndPassword(String username, String password, String identity) {
         User user = null;
         try {
             //1.定义sql
-            String sql = "select * from tab_user where username = ? and password = ?";
+            String sql = "select * from tab_user where username = ? and password = ? and identity = ?";
             //2.执行sql
-            user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), username,password);
+            user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), username,password,identity);
         } catch (Exception e) {
 
         }
