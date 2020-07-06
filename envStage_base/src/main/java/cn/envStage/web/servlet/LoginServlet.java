@@ -34,7 +34,6 @@ public class LoginServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        System.out.println("获取到的用户名：" + user.getUsername());
         System.out.println("获取到的身份：" + user.getIdentity());
 
         //3.调用Service查询

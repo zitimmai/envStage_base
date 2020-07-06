@@ -66,9 +66,9 @@
 				<div id="errorMsg" class="alert alert-danger" >请输入账号密码：</div>
 				<form id="loginForm" action="" method="post" accept-charset="utf-8">
 					<input type="hidden" name="action" value="login"/>
-                    <select>
-                        <option name="identity" value="system">管理员</option>
-                        <option name="identity" value="user">用户</option>
+                    <select name="identity">
+                        <option value="system">管理员</option>
+                        <option value="user">用户</option>
                     </select>
                     <input name="username" type="text" placeholder="请输入账号" autocomplete="off" >
 
