@@ -26,23 +26,22 @@
             //1.给登录按钮绑定单击事件
 			$("#btn_sub").click(function () {
                 //2.发送ajax请求，提交表单数据
-				$.post("/loginServlet",$("#loginForm").serialize(),function (data) {
-					//data : {flag:false,
-					// 			errorMsg:''}
-					if(data.flag){
-					    if(data.account){
-                            location.href="usermanager.html";
-                        }else {
-					        //登录成功
-                            location.href="systemmanager.html";
+				$.post("/loginServlet",$("#loginForm").serialize(), function (data) {
+                        if(data.flag){
+                            if(data.account){
+                                location.href="usermanager.html";
+                            } else {
+                                location.href="systemmanager.html";
+                            }
+                        }else{
+                            //登录失败
+                            $("#errorMsg").html(data.errorMsg);
+                            $("#verifyCode").click();
 					    }
-
-					}else{
-					    //登录失败
-						$("#errorMsg").html(data.errorMsg);
-					}
                 });
+
             });
+
         });
 
 	</script>
@@ -75,16 +74,17 @@
 					<input name="password" type="password" placeholder="请输入密码" autocomplete="off" >
 					<div class="verify">
 						<input name="check" type="text" placeholder="请输入验证码" autocomplete="off">
-						<span><img src="checkCode" alt="" onclick="changeCheckCode(this)"></span>
-						<script type="text/javascript">
-							//图片点击事件
-							function changeCheckCode(img) {
-								img.src="checkCode?"+new Date().getTime();
-							}
-						</script>
+						<span><img src="checkCode" alt="" onclick="this.src=this.src+'?'+Math.random()" id="verifyCode"></span>
+<!--						<script type="text/javascript">-->
+<!--							//图片点击事件-->
+<!--							function changeCheckCode(img) {-->
+<!--								img.src="checkCode?"+new Date().getTime();-->
+<!--							}-->
+<!--						</script>-->
 					</div>
 					<div class="submit_btn">
-						<button type="button"  id="btn_sub">登录</button>
+						<button type="button"  id="btn_sub" >登录</button>
+
 <!--						<div class="auto_login">-->
 <!--							<input type="checkbox" name="" class="checkbox">-->
 <!--							<span>自动登录</span>-->

@@ -21,7 +21,7 @@ public class LoginFilter implements Filter {
 
         String uri = request.getRequestURI();
 
-        if(uri.contains("/index.html") || uri.contains("/header.html")  || uri.contains("/footer.html")  ||uri.contains("/login.html") || uri.contains("loginServlet") || uri.contains("css") || uri.contains("js") || uri.contains("fonts") || uri.contains("images") ||uri.contains("checkCode") ){
+        if(uri.contains("/index.html") || uri.contains("/header.html")  || uri.contains("/footer.html")  ||uri.contains("/login.html") || uri.contains("loginServlet") || uri.contains("testServlet") ||uri.contains("css") || uri.contains("js") || uri.contains("fonts") || uri.contains("images") ||uri.contains("checkCode") ){
 
             chain.doFilter(req, resp);
         }else{
@@ -33,8 +33,6 @@ public class LoginFilter implements Filter {
                 System.out.println("defeat");
             }
         }
-
-        chain.doFilter(req, resp);
     }
 
     public void init(FilterConfig config) throws ServletException {

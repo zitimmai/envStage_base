@@ -40,6 +40,7 @@ public class CheckCodeServlet extends HttpServlet {
 		
 		//产生4个随机验证码，12Ey
 		String checkCode = getCheckCode();
+
 		//将验证码放入HttpSession中
 		request.getSession().setAttribute("CHECKCODE_SERVER",checkCode);
 		

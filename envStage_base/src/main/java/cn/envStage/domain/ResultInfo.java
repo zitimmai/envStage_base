@@ -72,4 +72,14 @@ public class ResultInfo implements Serializable {
     public void setAccount(boolean account) {
         this.account = account;
     }
+
+    @Override
+    public String toString() {
+        return "ResultInfo{" +
+                "flag=" + flag +
+                ", data=" + data +
+                ", errorMsg='" + errorMsg + '\'' +
+                ", account=" + account +
+                '}';
+    }
 }
